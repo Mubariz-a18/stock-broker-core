@@ -10,6 +10,7 @@ import { WatchlistModule } from './modules/watchlist/watchlist.module';
 import { AlertsModule } from './modules/alerts/alerts.module';
 import { ConfigModule } from '@nestjs/config';
 import appConfig from './shared/config/app.config';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import appConfig from './shared/config/app.config';
       isGlobal: true,
       load: [appConfig],
     }),
+    ScheduleModule.forRoot(),
     UsersModule,
     AuthModule,
     MarketModule,
